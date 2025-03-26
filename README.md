@@ -6,6 +6,6 @@ The released bynary has a provenance, from which you can check the process has l
 ## How to use
 
 ```shell
-gh release download --repo no-yan/gha-provenance
-gh attestation verify PATH/TO/ARTIFACT -o no-yan
+gh release download --repo no-yan/gha-provenance --pattern greet
+gh attestation verify greet -o no-yan
 ```
