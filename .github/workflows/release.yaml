@@ -39,6 +39,7 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           path: "greet"
+          name: "sea"
 
       - name: Ensure binary runs
         run: |
@@ -57,7 +58,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - uses: actions/download-artifact@95815c38cf2ff2164869cbab79da8d1f422bc89e # v4.2.1
         with:
-          path: "greet"
-      - run: gh release create --prerelease --generate-notes greet
+          name: "sea"
+      - run: ls
+      - run: |
+          gh release create --prerelease --generate-notes test-release greet
         env:
           GH_TOKEN: ${{ github.token }}
